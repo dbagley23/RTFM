@@ -3,7 +3,8 @@ angular.module('rtfmApp')
     var threadId = parseInt($routeParams.threadId);
 
     $scope.newComment = '';
-    $scope.thread = threadService.getThread(threadId);
+    var thread = threadService.getThread(threadId);
+    thread.$bindTo($scope, 'thread') //creates $scope.thread with 3 way binding
 
     $scope.addComment= function(){ 
         if(!$scope.newComment){

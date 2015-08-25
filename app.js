@@ -1,4 +1,9 @@
-angular.module('rtfmApp', ['ngRoute'])
+var app = angular.module('rtfmApp', ['ngRoute', 'firebase'])
+
+.constant('fb', {
+  url: 'https://rtfm-data.firebaseio.com'
+})
+
 .config(function($routeProvider){
         $routeProvider.
             when('/login', {
