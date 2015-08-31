@@ -17,7 +17,7 @@ angular.module('rtfmApp')
             text: $scope.newComment,
             username: currentUser.name
         };
-
+        $scope.thread.comments = $scope.thread.comments || [];
         $scope.thread.comments.push(newComment);
     
         $scope.newComment = ''; //Clear the input box
